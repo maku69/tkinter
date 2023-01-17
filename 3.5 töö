@@ -1,0 +1,31 @@
+import tkinter
+from tkinter import filedialog
+import datetime
+from datetime import *
+
+#aken
+root_window = tkinter.Tk()
+root_window.withdraw()
+
+#deffid
+def choose_file():
+    return filedialog.askopenfilename()
+
+#kuupaeva värk
+kuupaev = (datetime.now().day)
+
+
+#faili vargid
+selected_file = choose_file()
+
+with open (selected_file,'r') as readfile:
+     lines = readfile.read().splitlines()
+
+jrk = 1
+
+for line in lines:
+    if jrk == kuupaev:
+        print (jrk, line, "tuleb vastama!!!")
+    jrk+=1
+    
+    
